@@ -7,7 +7,10 @@ import PropTypes from 'prop-types';
 export default class ImageRender extends React.Component{
   render(){
     return (
-      <Modal isOpen={this.props.selected} contentLabel="Image">
+      <Modal
+        isOpen={this.props.selected}
+        contentLabel="Image"
+        >
       <div className="image__details">
         <a href={this.props.image.src} target="_blank"> <img className="image--modal" alt={this.props.image.title} src={this.props.image.src}/></a>
         <h2>{this.props.image.title}</h2>
