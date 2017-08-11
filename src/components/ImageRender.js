@@ -5,20 +5,22 @@ import {History} from '../routes/routes';
 import PropTypes from 'prop-types';
 
 export default class ImageRender extends React.Component{
+  closeModal(){
+    History.replace('/gallery');
+    Session.set(undefined);
+  }
   render(){
     return (
       <Modal
         isOpen={this.props.selected}
         contentLabel="Image"
+        onRequestClose={this.closeModal.bind(this)}
         >
       <div className="image__details">
         <a href={this.props.image.src} target="_blank"> <img className="image--modal" alt={this.props.image.title} src={this.props.image.src}/></a>
         <h2>{this.props.image.title}</h2>
         <p>{this.props.image.description}</p>
-        <button className="button" onClick={()=>{
-          History.replace('/gallery');
-          Session.set(undefined);
-        }}>Go back</button>
+        <button className="button" onClick={this.closeModal.bind(this)}>Go back</button>
       </div>
     </Modal>
     );
