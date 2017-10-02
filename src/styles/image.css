@@ -6,6 +6,32 @@
 .image--selected{
   border: 2px solid black;
 }
-.image--modal{
-  width: 90%;
+
+.modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 640px;
+  overlfow: scroll;
+  border: transparent;
+  padding: 15px;
+  position: absolute;
+  background-color: #fff;
+  outline: 0;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.75);
+}
+
+.modal__image {
+  width: 100%;
 }

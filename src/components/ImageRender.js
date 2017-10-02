@@ -10,14 +10,17 @@ export default class ImageRender extends React.Component{
     Session.set(undefined);
   }
   render(){
+
     return (
       <Modal
         isOpen={this.props.selected}
         contentLabel="Image"
+        className="modal"
+        overlayClassName="modal__overlay"
         onRequestClose={this.closeModal.bind(this)}
         >
       <div className="image__details">
-        <a href={this.props.image.src} target="_blank"> <img className="image--modal" alt={this.props.image.title} src={this.props.image.src}/></a>
+        <a href={this.props.image.src} target="_blank"> <img className="modal__image" alt={this.props.image.title} src={this.props.image.src}/></a>
         <h2>{this.props.image.title}</h2>
         <p>{this.props.image.description}</p>
         <button className="button" onClick={this.closeModal.bind(this)}>Go back</button>
